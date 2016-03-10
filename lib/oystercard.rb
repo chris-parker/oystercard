@@ -4,7 +4,7 @@ class Oystercard
   MIN_FARE = 1
   PEN_FARE = 6
 
-  attr_reader :journeylog, :balance
+  attr_reader :balance
 
   def initialize(journeylog = Journeylog)
     @balance = DEFAULT_BALANCE
@@ -19,7 +19,7 @@ class Oystercard
   def touch_in(station)
     raise 'balance too low' if low_balance?
     @journeylog.start(station)
-    deduct if journeylog.deduct?
+    deduct if @journeylog.deduct?
   end
 
   def touch_out(station)
