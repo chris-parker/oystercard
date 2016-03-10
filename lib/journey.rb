@@ -3,8 +3,8 @@ class Journey
   attr_reader :entrance, :exit
 
   def initialize
-    @entrance
-    @exit
+    @entrance = nil
+    @exit = nil
   end
 
   def start(station)
@@ -13,7 +13,7 @@ class Journey
 
   def end(station)
     @exit = station
-    zones_crossed
+    zones_crossed if complete?
   end
 
   def zones_crossed
