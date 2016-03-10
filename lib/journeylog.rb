@@ -52,5 +52,5 @@ private
     @current_journey.store_fare(fare)
     @current_journey = nil
   end
-  
+
 end
